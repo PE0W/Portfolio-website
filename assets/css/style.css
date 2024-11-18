@@ -368,9 +368,10 @@ h3{
 .project-container {
     display: flex;
     width: 100%;
-    justify-content:first baseline;
-    gap: 10px;
+    justify-content:center;
+    gap: 20px;
     flex-wrap: wrap;
+    text-align: center;
 }
 
 .project-box {
@@ -396,6 +397,7 @@ h3{
     object-fit: cover;
     transition: transform 0.3s ease;
     border-radius: 15px;
+    text-align: center;
 }
 
 .project-box:hover img {
