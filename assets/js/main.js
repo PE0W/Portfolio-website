@@ -116,15 +116,17 @@ function scrollActive() {
 
 window.addEventListener('scroll', scrollActive)
 
-// Select the duck element
-const duck = document.querySelector('.duck');
+function openZoom(imgElement) {
+    const modal = document.getElementById("zoomModal");
+    const modalImg = document.getElementById("zoomedImage");
 
-// Function to update the duck's position based on mouse movement
-document.addEventListener('mousemove', (event) => {
-    const mouseX = event.clientX;
-    const mouseY = event.clientY;
-    
-    // Set the position of the duck to follow the cursor
-    duck.style.transform = `translate(${mouseX - 25}px, ${mouseY - 25}px)`;
-});
+    modal.style.display = "block";
+    modalImg.src = imgElement.src;
+}
+
+function closeZoom() {
+    const modal = document.getElementById("zoomModal");
+    modal.style.display = "none";
+}
+
 

@@ -47,6 +47,7 @@ html{
     background: #bbb;
 }
 
+
 /* ------- BASE -------- */
 body{
     background: var(--body-color);
@@ -318,7 +319,33 @@ body{
     justify-content: flex-start; /* Aligns the image to the left */
     margin-top: 20px; /* Adds space between the section and the image */
     padding-left: 20px; /* Optional: adds left padding to adjust position */
+    text-align: center;
 }
+.center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.prototype-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #000000; /* Text color */
+    background-color: #ffffff; /* Background color */
+    text-decoration: none;
+    border-radius: 5px;
+    outline: 2px solid #000000; /* Outline thickness and color */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.prototype-button:hover {
+    background-color: #000000; /* Background changes on hover */
+    color: #ffffff; /* Text color changes on hover */
+}
+
 
 .ui-image {
     max-width: 93%; /* Ensures the image fits within the container */
