@@ -340,9 +340,6 @@ h3{
     color: var(--color-white);
     border-radius: 30px;
 }
-.about-btn button:hover{
-    background: var(--first-color-hover);
-}
 
 /* ----- ABOUT / SKILLS BOX ----- */
 .skills-box{
