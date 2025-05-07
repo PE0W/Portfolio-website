@@ -17,6 +17,7 @@
 
 } */
 
+
 /* ----- BASE ----- */
 * {
     margin: 0;
@@ -26,31 +27,31 @@
 }
 
 /* ----- SMOOTH SCROLL ----- */
-html{
+html {
     scroll-behavior: smooth;
 }
 
 /* ----- CHANGE THE SCROLL BAR DESIGN ----- */
-::-webkit-scrollbar{
+::-webkit-scrollbar {
     width: 10px;
     border-radius: 25px;
 }
 
-::-webkit-scrollbar-track{
+::-webkit-scrollbar-track {
     background: #f1f1f1;
 }
 
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
     background: #ccc;
     border-radius: 30px;
 }
 
-::-webkit-scrollbar-thumb:hover{
+::-webkit-scrollbar-thumb:hover {
     background: #bbb;
 }
 
 /* ------- BASE -------- */
-body{
+body {
     background: var(--body-color);
 }
 
@@ -72,7 +73,7 @@ span {
     height: 100%;
     overflow-y: auto;
     transition: transform 0.3s ease;
-    transform: translateX(-250px); /* hidden by default */
+    transform: translateX(-250px);
 }
 
 .navbar a {
@@ -90,23 +91,23 @@ span {
 }
 
 .navbar-toggle {
-    display:none; /* Hide toggle button on large screens */
+    display: none;
 }
 
 .navbar-links {
-    display: block; /* Show links in sidebar */
+    display: block;
 }
 
-#coffee{
+#coffee {
     margin-bottom: 60px;
 }
 
 #inspection-text {
-    font-size: 20px; /* Example font size */
+    font-size: 20px;
 }
 
 #icons-text {
-    font-size: 20px; /* Example font size */
+    font-size: 20px;
 }
 
 .navbar-header {
@@ -123,7 +124,7 @@ span {
 }
 
 .navbar-title:hover {
-    color: #000000; 
+    color: #000000;
 }
 
 .navbar h2 {
@@ -179,23 +180,23 @@ span {
 }
 
 .sidebar-toggle span {
-    font-size: 20px; /* Size of the hamburger icon */
-    color: black; /* Color of the icon */
+    font-size: 20px;
+    color: black;
 }
 
 .sidebar-toggle.collapsed {
-    left: 250px; /* Adjust based on sidebar width */
+    left: 250px;
     transform: rotate(180deg);
 }
 
-#navbar.open + .sidebar-toggle {
-    right: 250px; /* Adjust if your navbar width differs */
+#navbar.open+.sidebar-toggle {
+    right: 250px;
 }
 
 .underline-line {
     width: 20%;
     border: 0;
-    border-top: 2px solid #bdbcbc; 
+    border-top: 2px solid #bdbcbc;
     margin-top: 20px;
 }
 
@@ -222,7 +223,7 @@ span {
 .info-sections {
     display: flex;
     justify-content: space-between;
-    gap: 20px; 
+    gap: 20px;
 }
 
 .row {
@@ -244,23 +245,23 @@ span {
 }
 
 /* ----- ABOUT / SKILLS BOX ----- */
-.skills-box{
+.skills-box {
     margin: 10px;
 }
 
-.skills-header{
+.skills-header {
     margin-bottom: 10px;
     padding: 20;
 }
 
-.skills-list{
+.skills-list {
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
     width: 200%;
 }
 
-.skills-list span{
+.skills-list span {
     font-size: 18px;
     background: var(--first-color);
     color: var(--color-white);
@@ -272,24 +273,24 @@ span {
     display: flex;
     flex-wrap: wrap;
     gap: 2px;
-    max-width: 100%; /* Ensure it doesn’t exceed the viewport width */
-    padding: 10px; /* Add padding for better readability */
+    max-width: 100%;
+    padding: 10px;
     box-sizing: border-box;
 }
 
 .skills-list-note span {
-    font-size: 16px; /* Adjust font size for smaller screens */
+    font-size: 16px;
     background: var(--first-color);
     color: var(--color-white);
     padding: 5px 10px;
     border-radius: 5px;
 }
 
-.p{
+.p {
     font-size: 50px;
 }
 
-#coffee-head{
+#coffee-head {
     color: #96C9F4;
 }
 
@@ -298,28 +299,28 @@ span {
     margin-bottom: 30px;
     background-color: rgba(241, 241, 241, 0.411);
     background-position: center;
-    display: flex;           
-    justify-content: center; 
-    align-items: center;         
-    text-align: center;          
-    height: 200px;              
-    padding: 50px;              
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 200px;
+    padding: 50px;
 }
 
-#approach-color{
+#approach-color {
     color: #96C9F4;
 }
 
-#lineapproach{
+#lineapproach {
     margin-bottom: 10px;
 }
 
-#challenges{
+#challenges {
     color: #96C9F4;
-     font-size: 30px;
+    font-size: 30px;
 }
 
-#target{
+#target {
     margin-top: 80px;
 }
 
@@ -328,37 +329,37 @@ span {
     margin-bottom: 30px;
     background-color: rgba(241, 241, 241, 0.411);
     background-position: center;
-    display: flex;           
-    justify-content: center; 
-    align-items: center;         
-    text-align: center;          
-    height: 200px;              
-    padding: 50px;              
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 200px;
+    padding: 50px;
 }
 
-#deliverable-color{
+#deliverable-color {
     color: #96C9F4;
 }
 
-#linedeliverable{
+#linedeliverable {
     margin-bottom: 10px;
 }
 
-#research{
+#research {
     color: #96C9F4;
-     font-size: 30px;
+    font-size: 30px;
 }
 
-#uidesign{
+#uidesign {
     color: #96C9F4;
-     font-size: 28px;
+    font-size: 28px;
 }
 
-#UI{
+#UI {
     margin-top: 80px;
 }
 
-#Cover{
+#Cover {
     margin-top: 30px;
 }
 
@@ -367,31 +368,31 @@ span {
     margin-bottom: 0px;
     background-color: rgba(241, 241, 241, 0.411);
     background-position: center;
-    display: flex;           
-    justify-content: center; 
-    align-items: center;         
-    text-align: center;          
-    height: 230px;              
-    padding: 0px;              
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 230px;
+    padding: 0px;
 }
 
-#footer-color{
+#footer-color {
     color: #96C9F4;
 }
 
-#linefooter{
+#linefooter {
     margin-bottom: 0px;
 }
 
 .image-container {
     display: flex;
-    justify-content: flex-start; /* Aligns the image to the left */
-    margin-top: 20px; /* Adds space between the section and the image */
-    padding-left: 20px; /* Optional: adds left padding to adjust position */
+    justify-content: flex-start;
+    margin-top: 20px;
+    padding-left: 20px;
 }
 
 .ui-image {
-    max-width: 93%; /* Ensures the image fits within the container */
+    max-width: 93%;
     height: auto;
 }
 
@@ -399,7 +400,8 @@ span {
     text-decoration: underline;
 }
 
-.section h3,.section p {
+.section h3,
+.section p {
     display: inline;
     margin-right: 20px;
 }
@@ -409,6 +411,32 @@ span {
     flex-direction: column;
     align-items: center;
     text-align: center;
+}
+
+.video-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.video-container {
+    text-align: center;
+}
+
+.ui-video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.video-caption {
+    font-size: 14px;
+    color: #666;
+    margin-top: 8px;
+    font-style: italic;
 }
 
 .project-navigation {
@@ -437,30 +465,33 @@ span {
     border: 2px solid #fff;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     color: #000000;
 }
 
 p {
-    font-size: 18px; /* Adjust the paragraph font size */
+    font-size: 18px;
 }
 
-h2{
+h2 {
     padding-bottom: 10px;
     font-size: 30px;
 }
 
-h4{
+h4 {
     font-size: 14.4px;
 }
 
-ul, ol {
+ul,
+ol {
     padding-left: 20px;
 }
 
 @media (min-width: 769px) {
     .sidebar {
-      display: block;
+        display: block;
     }
 }
 
@@ -468,217 +499,268 @@ ul, ol {
     .container {
         flex-direction: column;
     }
+
     .navbar {
         width: 100%;
         height: auto;
         padding: 20px;
         position: relative;
     }
+
     .navbar-toggle {
         display: block;
     }
+
     .navbar-links {
         display: none;
         flex-direction: column;
     }
+
     .navbar.open .navbar-links {
         display: flex;
     }
+
     .navbar-links a {
         padding: 10px 0;
         border-top: 1px solid #ddd;
     }
+
     .sidebar {
         display: none;
-      }
+    }
+
     .content {
         padding: 10px;
     }
+
     .row {
         flex-direction: column;
     }
-    .vertical-left, .col {
+
+    .vertical-left,
+    .col {
         width: 100%;
     }
-    h1, h2, h3, p {
+
+    h1,
+    h2,
+    h3,
+    p {
         font-size: 1em;
     }
+
     .skills-list-note {
-        width: 100%; /* Full-width on smaller screens */
+        width: 100%;
         padding: 5px 10px;
     }
 
     .skills-list-note span {
-        font-size: 14px; /* Smaller font size for better fit */
+        font-size: 14px;
     }
 }
 
 
-/* Mobile Adjustments */
 @media (max-width: 480px) {
     .navbar h2 {
         font-size: 1.2em;
     }
+
     .navbar-toggle {
         font-size: 20px;
 
     }
-    .content, .section {
+
+    .content,
+    .section {
         padding: 10px;
         width: 100%;
     }
-    .skills-box span, .skills-list span {
+
+    .skills-box span,
+    .skills-list span {
         font-size: 14px;
     }
-    h1, h2, h3 {
+
+    h1,
+    h2,
+    h3 {
         font-size: 1.5em;
     }
+
     .image-container .ui-image {
         max-width: 100%;
         margin-top: 10px;
     }
+
     .skills-list-note {
-        width: 100%; /* Ensures full-width on very small screens */
-        padding: 5px; /* Reduce padding for mobile */
+        width: 100%;
+        padding: 5px;
     }
 
     .skills-list-note span {
-        font-size: 12px; /* Further reduce font size for readability */
+        font-size: 12px;
     }
 }
 
-/* Mobile Adjustments for Devices under 480px */
+
 @media (max-width: 480px) {
+
     /* Navbar */
     .navbar {
-        width: 100%;  /* Full width for the sidebar */
-        padding: 15px; /* Reduce padding */
+        width: 100%;
+        padding: 15px;
         position: relative;
     }
+
     .navbar-toggle {
-        display: block; /* Show toggle button */
-        font-size: 20px; /* Adjust icon size */
+        display: block;
+        font-size: 20px;
     }
+
     .navbar h2 {
-        font-size: 1.1em; /* Smaller heading font size */
+        font-size: 1.1em;
         line-height: 1.2;
     }
+
     .navbar-links a {
-        padding: 8px 0; /* Adjust spacing for links */
-        font-size: 0.9em; /* Smaller font for readability */
+        padding: 8px 0;
+        font-size: 0.9em;
     }
-    
+
     /* Main Content */
-    .content, .section {
+    .content,
+    .section {
         margin: 0;
-        padding: 10px; /* Compact padding */
-        width: 100%; /* Full width */
-    }
-    h1, h2, h3, p {
-        font-size: 0.9em; /* Smaller font size for all text elements */
-    }
-    
-    /* Skills and Lists */
-    .skills-box, .skills-list, .skills-list-note {
-        width: 100%; /* Full width */
-    }
-    .skills-list span, .skills-list-note span {
-        font-size: 12px; /* Smaller font for skills tags */
-        padding: 4px 8px; /* Reduce padding */
+        padding: 10px;
+        width: 100%;
     }
 
-    /* Images */
+    h1,
+    h2,
+    h3,
+    p {
+        font-size: 0.9em;
+    }
+
+    .skills-box,
+    .skills-list,
+    .skills-list-note {
+        width: 100%;
+    }
+
+    .skills-list span,
+    .skills-list-note span {
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+
     .image-container .ui-image {
-        max-width: 100%; /* Ensure image fits screen width */
-        margin-top: 10px; /* Spacing above image */
+        max-width: 100%;
+        margin-top: 10px;
     }
 
-    /* Footer and Other Elements */
     #footer {
-        height: auto; /* Allow footer to adapt height */
-        padding: 20px; /* Add padding for better spacing */
+        height: auto;
+        padding: 20px;
     }
-    #footer-color, #approach-color, #deliverable-color {
-        font-size: 1em; /* Adjust font size for smaller screens */
+
+    #footer-color,
+    #approach-color,
+    #deliverable-color {
+        font-size: 1em;
     }
-    
-    /* Button Adjustments */
+
     .navbar-toggle {
-        font-size: 18px; /* Slightly smaller button for compact view */
+        font-size: 18px;
         cursor: pointer;
-        margin-top: 5px; /* Spacing for toggle button */
+        margin-top: 5px;
     }
 }
 
-/* Mobile Adjustments for Devices under 320px */
 @media (max-width: 320px) {
+
     /* Navbar */
     .navbar {
-        width: 100%;  /* Full width for the sidebar */
-        padding: 10px; /* Reduce padding */
+        width: 100%;
+        padding: 10px;
     }
+
     .navbar h2 {
-        font-size: 1em; /* Smaller heading font size */
+        font-size: 1em;
         line-height: 1.1;
     }
+
     .navbar-links a {
-        padding: 6px 0; /* Compact padding */
-        font-size: 0.8em; /* Smaller font size */
+        padding: 6px 0;
+        font-size: 0.8em;
     }
-    
-    /* Toggle Button */
+
     .navbar-toggle {
-        font-size: 16px; /* Slightly smaller for compact screens */
+        font-size: 16px;
         margin-top: 5px;
     }
 
-    /* Main Content */
-    .content, .section {
+    .content,
+    .section {
         margin: 0;
-        padding: 8px; /* Minimal padding */
-        width: 100%; /* Full width */
-    }
-    h1, h2, h3, p {
-        font-size: 0.85em; /* Smaller font size */
-    }
-    
-    /* Skills List */
-    .skills-box, .skills-list, .skills-list-note {
-        width: 100%; /* Full width */
-    }
-    .skills-list span, .skills-list-note span {
-        font-size: 11px; /* Smaller font for skills tags */
-        padding: 3px 6px; /* Compact padding */
+        padding: 8px;
+        width: 100%;
     }
 
-    /* Images */
+    h1,
+    h2,
+    h3,
+    p {
+        font-size: 0.85em;
+    }
+
+    .skills-box,
+    .skills-list,
+    .skills-list-note {
+        width: 100%;
+    }
+
+    .skills-list span,
+    .skills-list-note span {
+        font-size: 11px;
+        padding: 3px 6px;
+    }
+
     .image-container .ui-image {
-        max-width: 100%; /* Ensure image fits within screen */
-        margin-top: 8px; /* Small spacing above image */
+        max-width: 100%;
+        margin-top: 8px;
     }
 
-    /* Footer and Other Elements */
     #footer {
-        height: auto; /* Flexible footer height */
-        padding: 15px; /* Reduce padding */
-    }
-    #footer-color, #approach-color, #deliverable-color {
-        font-size: 0.9em; /* Smaller font size */
+        height: auto;
+        padding: 15px;
     }
 
-    /* General Adjustments for Text and Layout */
-    .skills-header, .underline, .navbar a {
-        font-size: 0.8em; /* Reduce overall text size */
-    }
-    h1, h2, h3 {
-        font-size: 1.2em; /* Adjust headings for readability */
-    }
-    p, .navbar a, .section h3 {
-        font-size: 0.75em; /* Compact paragraph text */
+    #footer-color,
+    #approach-color,
+    #deliverable-color {
+        font-size: 0.9em;
     }
 
-    /* Centering Adjustments */
+    .skills-header,
+    .underline,
+    .navbar a {
+        font-size: 0.8em;
+    }
+
+    h1,
+    h2,
+    h3 {
+        font-size: 1.2em;
+    }
+
+    p,
+    .navbar a,
+    .section h3 {
+        font-size: 0.75em;
+    }
+
     .center-content {
-        text-align: left; /* Align text to left for readability */
+        text-align: left;
     }
 }

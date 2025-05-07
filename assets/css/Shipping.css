@@ -17,7 +17,6 @@
 
 } */
 
-
 /* ----- BASE ----- */
 * {
     margin: 0;
@@ -36,25 +35,23 @@ html{
     width: 10px;
     border-radius: 25px;
 }
+
 ::-webkit-scrollbar-track{
     background: #f1f1f1;
 }
+
 ::-webkit-scrollbar-thumb{
     background: #ccc;
     border-radius: 30px;
 }
+
 ::-webkit-scrollbar-thumb:hover{
     background: #bbb;
 }
 
-
 /* ------- BASE -------- */
 body{
     background: var(--body-color);
-}
-.container{
-    width: 100%;
-    position: relative;
 }
 
 .container {
@@ -62,13 +59,20 @@ body{
     flex-direction: row;
 }
 
+span {
+    content: "\27AB";
+}
+
 .navbar {
+    left: 10px;
     width: 300px;
     background-color: #ffffff;
     padding: 40px;
     position: fixed;
     height: 100%;
     overflow-y: auto;
+    transition: transform 0.3s ease;
+    transform: translateX(-250px); /* hidden by default */
 }
 
 .navbar a {
@@ -79,6 +83,7 @@ body{
     margin-bottom: 10px;
     border-radius: 5px;
 }
+
 .navbar h2 {
     color: #000000;
     font-size: 31.9px;
@@ -91,6 +96,7 @@ body{
 .navbar-links {
     display: block; /* Show links in sidebar */
 }
+
 #coffee{
     margin-bottom: 60px;
 }
@@ -151,6 +157,41 @@ body{
     display: none;
 }
 
+.sidebar {
+    width: 250px;
+    background-color: #f4f4f4;
+    transition: width 0.3s ease-in-out;
+}
+
+.sidebar-toggle {
+    position: fixed;
+    top: 20px;
+    right: 0;
+    z-index: 101;
+    background-color: var(--first-color);
+    color: white;
+    border: none;
+    padding: 10px 12px;
+    cursor: pointer;
+    border-radius: 8px 0 0 8px;
+    font-size: 18px;
+    transition: right 0.3s ease, transform 0.3s ease;
+}
+
+.sidebar-toggle span {
+    font-size: 20px; /* Size of the hamburger icon */
+    color: black; /* Color of the icon */
+}
+
+.sidebar-toggle.collapsed {
+    left: 250px; /* Adjust based on sidebar width */
+    transform: rotate(180deg);
+}
+
+#navbar.open + .sidebar-toggle {
+    right: 250px; /* Adjust if your navbar width differs */
+}
+
 .underline-line {
     width: 20%;
     border: 0;
@@ -158,11 +199,20 @@ body{
     margin-top: 20px;
 }
 
+#navbar {
+    transition: transform 0.3s ease;
+    transform: translateX(-250px);
+}
+
+#navbar.open {
+    transform: translateX(0);
+}
+
 /* Main Content */
 .content {
-    margin-left: 350px;
-    padding: 70px 20px 20px 20px;
-    flex: 1;
+    flex-grow: 1;
+    padding: 40px;
+    margin-left: 20px;
 }
 
 .section {
@@ -197,16 +247,19 @@ body{
 .skills-box{
     margin: 10px;
 }
+
 .skills-header{
     margin-bottom: 10px;
     padding: 20;
 }
+
 .skills-list{
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
     width: 200%;
 }
+
 .skills-list span{
     font-size: 18px;
     background: var(--first-color);
@@ -214,10 +267,11 @@ body{
     padding: 2px 10px;
     border-radius: 5px;
 }
+
 .skills-list-note {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 2px;
     max-width: 100%; /* Ensure it doesn’t exceed the viewport width */
     padding: 10px; /* Add padding for better readability */
     box-sizing: border-box;
@@ -227,15 +281,18 @@ body{
     font-size: 16px; /* Adjust font size for smaller screens */
     background: var(--first-color);
     color: var(--color-white);
+    padding: 5px 10px;
     border-radius: 5px;
 }
 
 .p{
     font-size: 50px;
 }
+
 #coffee-head{
     color: #96C9F4;
 }
+
 #approach {
     margin-top: 50px;
     margin-bottom: 30px;
@@ -248,6 +305,7 @@ body{
     height: 200px;              
     padding: 50px;              
 }
+
 #approach-color{
     color: #96C9F4;
 }
@@ -255,10 +313,12 @@ body{
 #lineapproach{
     margin-bottom: 10px;
 }
+
 #challenges{
     color: #96C9F4;
      font-size: 30px;
 }
+
 #target{
     margin-top: 80px;
 }
@@ -275,26 +335,33 @@ body{
     height: 200px;              
     padding: 50px;              
 }
+
 #deliverable-color{
     color: #96C9F4;
 }
+
 #linedeliverable{
     margin-bottom: 10px;
 }
+
 #research{
     color: #96C9F4;
      font-size: 30px;
 }
+
 #uidesign{
     color: #96C9F4;
      font-size: 28px;
 }
+
 #UI{
     margin-top: 80px;
 }
+
 #Cover{
     margin-top: 30px;
 }
+
 #footer {
     margin-top: 50px;
     margin-bottom: 0px;
@@ -307,6 +374,7 @@ body{
     height: 230px;              
     padding: 0px;              
 }
+
 #footer-color{
     color: #96C9F4;
 }
@@ -314,46 +382,23 @@ body{
 #linefooter{
     margin-bottom: 0px;
 }
+
 .image-container {
     display: flex;
     justify-content: flex-start; /* Aligns the image to the left */
     margin-top: 20px; /* Adds space between the section and the image */
     padding-left: 20px; /* Optional: adds left padding to adjust position */
-    text-align: center;
 }
-.center-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-.prototype-button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    color: #000000; /* Text color */
-    background-color: #ffffff; /* Background color */
-    text-decoration: none;
-    border-radius: 5px;
-    outline: 2px solid #000000; /* Outline thickness and color */
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.prototype-button:hover {
-    background-color: #000000; /* Background changes on hover */
-    color: #ffffff; /* Text color changes on hover */
-}
-
 
 .ui-image {
     max-width: 93%; /* Ensures the image fits within the container */
     height: auto;
 }
+
 .underline {
     text-decoration: underline;
 }
+
 .section h3,.section p {
     display: inline;
     margin-right: 20px;
@@ -366,9 +411,36 @@ body{
     text-align: center;
 }
 
+.project-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 40px auto;
+    max-width: 600px;
+    padding: 0 20px;
+}
+
+.nav-button {
+    background-color: #ffffff;
+    color: #000000;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    border: 2px solid #000000;
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: #000000;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
 h1, h2, h3 {
     color: #000000;
 }
+
 p {
     font-size: 18px; /* Adjust the paragraph font size */
 }
@@ -377,12 +449,19 @@ h2{
     padding-bottom: 10px;
     font-size: 30px;
 }
+
 h4{
     font-size: 14.4px;
 }
 
 ul, ol {
     padding-left: 20px;
+}
+
+@media (min-width: 769px) {
+    .sidebar {
+      display: block;
+    }
 }
 
 @media (max-width: 768px) {
@@ -409,9 +488,11 @@ ul, ol {
         padding: 10px 0;
         border-top: 1px solid #ddd;
     }
+    .sidebar {
+        display: none;
+      }
     .content {
-        margin-left: 0;
-        padding: 20px;
+        padding: 10px;
     }
     .row {
         flex-direction: column;

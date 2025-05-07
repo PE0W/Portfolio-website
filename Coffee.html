@@ -14,6 +14,9 @@
     <!-- --------- FAVICON ---------- -->
     <link rel="shortcut icon" href="assets/images/cookie.png" type="image/x-icon">
 
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
     <title>Coffee Detector</title>
 </head>
 
@@ -23,7 +26,13 @@
         <div class="navbar" id="navbar">
             <div class="navbar-header">
                 <h2 class="navbar-title">Peow <span class="new-line">Vitsarut</span></h2>
-                <button class="navbar-toggle" onclick="toggleNavbar()">☰</button> <!-- Toggle Button for Mobile -->
+                <!-- Toggle Arrow Button -->
+                <!-- Place this after your .navbar div -->
+                <button id="sidebarToggle" class="sidebar-toggle" onclick="toggleSidebar()">
+                    <span id="icon" class="fas fa-bars"></span> <!-- Font Awesome hamburger icon -->
+                </button>
+                </button> <button class="navbar-toggle" onclick="toggleNavbar()">☰</button>
+                <!-- Toggle Button for Mobile -->
             </div>
             <div class="navbar-links">
                 <a href="index.html">Home</a>
@@ -32,6 +41,7 @@
                 <a href="Nextlevelshipping.html">🖥️📦🚚 Next Level Shipping (Case study)</a>
                 <a href="Donuts.html">🖥️🍩🍪 Donuts Seller</a>
                 <a href="Sport.html">🖥️📱🏟️🏋️‍♀️ Sport Complex Management Web-application</a>
+                <a href="Nakhon spa Ads.html">💡🫸🏻🫷🏻 Ads for Nakhon Spa </a>
             </div>
         </div>
     </div>
@@ -39,6 +49,7 @@
     <!-- Main Content -->
     <div class="content">
         <!-- Sections for new items in the nav menu -->
+        </button> <button class="navbar-toggle" onclick="toggleNavbar()">☰</button>
         <div id="coffee" class="section center-content">
             <h2 id="coffee-head">Coffee Detector Web-application</h2>
             <p id="inspection-text">Green Bean Coffee Defect Inspection (IATE&CQR)</p>
@@ -249,6 +260,11 @@
         </div>
         <span class="section center-content" id="Cover">User Flow (Partial)<br>Green Beans Coffee Detection</span>
 
+        <div class="project-navigation">
+            <a href="#prev-project" class="nav-button">Back</a>
+            <a href="Mango.html" class="nav-button">Next</a>
+        </div>
+
         <!-- -------------- FOOTER ---------------- -->
         <div id="footer" class="section center-content">
             <h2 id="footer-color">THANK YOU !</h2>
@@ -271,6 +287,19 @@
         function toggleNavbar() {
             const navbar = document.getElementById("navbar");
             navbar.classList.toggle("open"); // Toggle the 'open' class on click
+        }
+    </script>
+
+    <script>
+        function toggleSidebar() {
+            const navbar = document.getElementById("navbar");
+            const icon = document.getElementById("icon");
+
+            navbar.classList.toggle("open");
+
+            // Optionally, you can toggle between a close icon and the hamburger icon (for example).
+            icon.classList.toggle("fa-bars");
+            icon.classList.toggle("fa-times");  // Change to "fa-times" when the sidebar is open
         }
     </script>
 

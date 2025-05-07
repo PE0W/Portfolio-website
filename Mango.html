@@ -14,6 +14,9 @@
     <!-- --------- FAVICON ---------- -->
     <link rel="shortcut icon" href="assets/images/cookie.png" type="image/x-icon">
 
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
     <title>Mango Classification</title>
 </head>
 
@@ -23,15 +26,22 @@
         <div class="navbar" id="navbar">
             <div class="navbar-header">
                 <h2 class="navbar-title">Peow <span class="new-line">Vitsarut</span></h2>
-                <button class="navbar-toggle" onclick="toggleNavbar()">☰</button> <!-- Toggle Button for Mobile -->
+                <!-- Toggle Arrow Button -->
+                <!-- Place this after your .navbar div -->
+                <button id="sidebarToggle" class="sidebar-toggle" onclick="toggleSidebar()">
+                    <span id="icon" class="fas fa-bars"></span> <!-- Font Awesome hamburger icon -->
+                </button>
+                </button> <button class="navbar-toggle" onclick="toggleNavbar()">☰</button>
+                <!-- Toggle Button for Mobile -->
             </div>
             <div class="navbar-links">
                 <a href="index.html">Home</a>
                 <a href="Coffee.html">🖥️☕ Coffee Detector Web-application</a>
-                <a href="Mango.html">🖥️🥭 Mango Classification Web-application</a>
+                <a href="Mango.html">🖥️🥭 Mango Inspection Web-application</a>
                 <a href="Nextlevelshipping.html">🖥️📦🚚 Next Level Shipping (Case study)</a>
                 <a href="Donuts.html">🖥️🍩🍪 Donuts Seller</a>
                 <a href="Sport.html">🖥️📱🏟️🏋️‍♀️ Sport Complex Management Web-application</a>
+                <a href="Nakhon spa Ads.html">💡🫸🏻🫷🏻 Ads for Nakhon Spa </a>
             </div>
         </div>
     </div>
@@ -79,8 +89,10 @@
                             <h4>OVERVIEW</h4>
                         </div>
                         <div class="skills-list-note">
-                            <span>" We aim to enhance commercial mango quality classification by focusing on three popular varieties: NamDokMai Sithong, Mahachanok, and R2E2. 
-                                Through advanced imaging and machine learning, we seek to improve quality control, ensuring only the best produce reaches consumers. "</span>
+                            <span>" We aim to enhance commercial mango quality classification by focusing on three
+                                popular varieties: NamDokMai Sithong, Mahachanok, and R2E2.
+                                Through advanced imaging and machine learning, we seek to improve quality control,
+                                ensuring only the best produce reaches consumers. "</span>
                         </div>
                     </div>
                 </div>
@@ -106,9 +118,12 @@
                         <div class="skills-header">
                         </div>
                         <div class="skills-list-note">
-                            <span>The challenges in commercial mango quality classification include accurately distinguishing between the subtle differences in appearance, texture, 
-                                and ripeness of each variety, especially under varying environmental conditions. Additionally, implementing machine learning models that can consistently 
-                                perform across different mango batches and real-world settings poses a significant challenge in terms of data variability and model generalization.</span>
+                            <span>The challenges in commercial mango quality classification include accurately
+                                distinguishing between the subtle differences in appearance, texture,
+                                and ripeness of each variety, especially under varying environmental conditions.
+                                Additionally, implementing machine learning models that can consistently
+                                perform across different mango batches and real-world settings poses a significant
+                                challenge in terms of data variability and model generalization.</span>
                         </div>
                     </div>
                 </div>
@@ -128,8 +143,10 @@
                         <div class="skills-header">
                         </div>
                         <div class="skills-list-note">
-                            <span>The target of this project is to develop an automated system that can accurately classify and grade mangoes based on their variety and quality, ensuring consistency 
-                                and reliability in the selection process. This system aims to improve efficiency in the supply chain, reduce human error, and enhance the overall consumer experience 
+                            <span>The target of this project is to develop an automated system that can accurately
+                                classify and grade mangoes based on their variety and quality, ensuring consistency
+                                and reliability in the selection process. This system aims to improve efficiency in the
+                                supply chain, reduce human error, and enhance the overall consumer experience
                                 by delivering high-quality mangoes.</span>
                         </div>
                     </div>
@@ -158,7 +175,8 @@
                         <div class="skills-list-note">
                             <p>
                                 "After we had the main idea, I conducted a ""<strong>“user
-                                    research”</strong>""session with the research project, with the experts coordination both
+                                    research”</strong>""session with the research project, with the experts coordination
+                                both
                                 inside and outside the university."
                             </p>
                             <p>
@@ -166,7 +184,8 @@
                             </p>
                             <p>
                                 <strong>RESEARCH STATEMENT PROBLEM :</strong>
-                                How can users accurately determine the ripeness or quality of a mango, such as whether it is ripe and ready to eat domestically or waiting to be exported overseas?
+                                How can users accurately determine the ripeness or quality of a mango, such as whether
+                                it is ripe and ready to eat domestically or waiting to be exported overseas?
                             </p>
                             <p>
                                 <br>
@@ -194,7 +213,8 @@
                             <p>
                                 <strong>METHODOLOGY / TOOLS </strong>
                                 <br>
-                                - <span class="underline">Attitude & Quantitative: Collecting data</span> A database of 3 mango spicies and photo
+                                - <span class="underline">Attitude & Quantitative: Collecting data</span> A database of
+                                3 mango spicies and photo
                                 <br>Chanel : Representatives of the research team.
                                 <br>Group : Mango research group.
                                 <br>
@@ -240,6 +260,11 @@
         </div>
         <span class="section center-content" id="Cover">User Flow (Partial)<br>Mango Grading Classification</span>
 
+        <div class="project-navigation">
+            <a href="Coffee.html" class="nav-button">Back</a>
+            <a href="Nextlevelshipping.html" class="nav-button">Next</a>
+        </div>
+
         <!-- -------------- FOOTER ---------------- -->
         <div id="footer" class="section center-content">
             <h2 id="footer-color">THANK YOU !</h2>
@@ -262,6 +287,19 @@
         function toggleNavbar() {
             const navbar = document.getElementById("navbar");
             navbar.classList.toggle("open"); // Toggle the 'open' class on click
+        }
+    </script>
+
+    <script>
+        function toggleSidebar() {
+            const navbar = document.getElementById("navbar");
+            const icon = document.getElementById("icon");
+
+            navbar.classList.toggle("open");
+
+            // Optionally, you can toggle between a close icon and the hamburger icon (for example).
+            icon.classList.toggle("fa-bars");
+            icon.classList.toggle("fa-times");  // Change to "fa-times" when the sidebar is open
         }
     </script>
 
