@@ -1,0 +1,719 @@
+/* ----- POPPINS FONT Link ----- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* :root{
+    --body-color: rgb(250, 250, 250);
+    --color-white: rgb(255, 255, 255);
+
+    --text-color-second: rgb(68, 68, 68);
+    --text-color-third: rgb(0, 0, 0);
+
+    --first-color: rgb(2, 2, 2);
+    --first-color-hover: rgb(252, 252, 252);
+
+    --second-color: rgb(5, 5, 5);
+    --third-color: rgb(10, 10, 10);
+    --first-shadow-color: rgba(0, 0, 0, 0.1);
+
+} */
+
+/* ----- BASE ----- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ----- SMOOTH SCROLL ----- */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ----- CHANGE THE SCROLL BAR DESIGN ----- */
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #bbb;
+}
+
+/* ------- BASE -------- */
+body{
+    background: var(--body-color);
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+span {
+    content: "\27AB";
+}
+
+.navbar {
+    left: 10px;
+    width: 300px;
+    padding-right: 60px;
+    padding-top: 20px;
+    padding-left: 5px;
+    background-color: #ffffff;
+    position: fixed;
+    height: 100%;
+    overflow-y: auto;
+    transition: transform 0.3s ease;
+    transform: translateX(-250px);
+}
+
+.navbar a {
+    display: block;
+    color: #000000;
+    padding: 10px;
+    text-decoration: none;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.navbar h2 {
+    color: #000000;
+    font-size: 31.9px;
+}
+
+.navbar-toggle {
+    display:none; /* Hide toggle button on large screens */
+}
+
+.navbar-links {
+    display: block; /* Show links in sidebar */
+}
+
+#coffee{
+    margin-bottom: 60px;
+}
+
+#inspection-text {
+    font-size: 20px; /* Example font size */
+}
+
+#icons-text {
+    font-size: 20px; /* Example font size */
+}
+
+.navbar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-title {
+    color: #000000;
+    text-decoration: none;
+    pointer-events: none;
+    cursor: default;
+}
+
+.navbar-title:hover {
+    color: #000000; 
+}
+
+.navbar h2 {
+    color: #000000;
+    font-size: 31.9px;
+}
+
+.new-line {
+    display: block;
+}
+
+.navbar a {
+    display: block;
+    color: #000000;
+    padding: 10px;
+    text-decoration: none;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.navbar a:hover {
+    background-color: #050505;
+    color: #ffffff;
+}
+
+.navbar-toggle {
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    display: none;
+    right: 10px;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #f4f4f4;
+    transition: width 0.3s ease-in-out;
+}
+
+.sidebar-toggle {
+    position: fixed;
+    top: 20px;
+    right: 0;
+    z-index: 101;
+    background-color: var(--first-color);
+    color: white;
+    border: none;
+    padding: 10px 12px;
+    cursor: pointer;
+    border-radius: 8px 0 0 8px;
+    font-size: 18px;
+    transition: right 0.3s ease, transform 0.3s ease;
+}
+
+.sidebar-toggle span {
+    font-size: 20px; /* Size of the hamburger icon */
+    color: black; /* Color of the icon */
+}
+
+.sidebar-toggle.collapsed {
+    left: 250px; /* Adjust based on sidebar width */
+    transform: rotate(180deg);
+}
+
+#navbar.open + .sidebar-toggle {
+    right: 250px; /* Adjust if your navbar width differs */
+}
+
+.underline-line {
+    width: 20%;
+    border: 0;
+    border-top: 2px solid #bdbcbc; 
+    margin-top: 20px;
+}
+
+#navbar {
+    transition: transform 0.3s ease;
+    transform: translateX(-250px);
+}
+
+#navbar.open {
+    transform: translateX(0);
+}
+
+/* Main Content */
+.content {
+    flex-grow: 1;
+    padding: 40px;
+    margin-left: 20px;
+}
+
+.section {
+    min-width: 200px;
+}
+
+.info-sections {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; 
+}
+
+.row {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    gap: 20px;
+}
+
+.vertical-left {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    gap: 5px;
+}
+
+.col {
+    width: 100%;
+}
+
+/* ----- ABOUT / SKILLS BOX ----- */
+.skills-box{
+    margin: 10px;
+}
+
+.skills-header{
+    margin-bottom: 10px;
+    padding: 20;
+}
+
+.skills-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    width: 200%;
+}
+
+.skills-list span{
+    font-size: 18px;
+    background: var(--first-color);
+    color: var(--color-white);
+    padding: 2px 10px;
+    border-radius: 5px;
+}
+
+.skills-list-note {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    max-width: 100%; /* Ensure it doesn’t exceed the viewport width */
+    padding: 10px; /* Add padding for better readability */
+    box-sizing: border-box;
+}
+
+.skills-list-note span {
+    font-size: 16px; /* Adjust font size for smaller screens */
+    background: var(--first-color);
+    color: var(--color-white);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.p{
+    font-size: 50px;
+}
+
+#coffee-head{
+    color: #96C9F4;
+}
+
+#approach {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    background-color: rgba(241, 241, 241, 0.411);
+    background-position: center;
+    display: flex;           
+    justify-content: center; 
+    align-items: center;         
+    text-align: center;          
+    height: 200px;              
+    padding: 50px;              
+}
+
+#approach-color{
+    color: #96C9F4;
+}
+
+#lineapproach{
+    margin-bottom: 10px;
+}
+
+#challenges{
+    color: #96C9F4;
+     font-size: 30px;
+}
+
+#target{
+    margin-top: 80px;
+}
+
+#deliverable {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    background-color: rgba(241, 241, 241, 0.411);
+    background-position: center;
+    display: flex;           
+    justify-content: center; 
+    align-items: center;         
+    text-align: center;          
+    height: 200px;              
+    padding: 50px;              
+}
+
+#deliverable-color{
+    color: #96C9F4;
+}
+
+#linedeliverable{
+    margin-bottom: 10px;
+}
+
+#research{
+    color: #96C9F4;
+     font-size: 30px;
+}
+
+#uidesign{
+    color: #96C9F4;
+     font-size: 28px;
+}
+
+#UI{
+    margin-top: 80px;
+}
+
+#Cover{
+    margin-top: 30px;
+}
+
+#footer {
+    margin-top: 50px;
+    margin-bottom: 0px;
+    background-color: rgba(241, 241, 241, 0.411);
+    background-position: center;
+    display: flex;           
+    justify-content: center; 
+    align-items: center;         
+    text-align: center;          
+    height: 230px;              
+    padding: 0px;              
+}
+
+#footer-color{
+    color: #96C9F4;
+}
+
+#linefooter{
+    margin-bottom: 0px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: flex-start; /* Aligns the image to the left */
+    margin-top: 20px; /* Adds space between the section and the image */
+    padding-left: 20px; /* Optional: adds left padding to adjust position */
+}
+
+.ui-image {
+    max-width: 93%; /* Ensures the image fits within the container */
+    height: auto;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.section h3,.section p {
+    display: inline;
+    margin-right: 20px;
+}
+
+.center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.project-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 40px auto;
+    max-width: 600px;
+    padding: 0 20px;
+}
+
+.nav-button {
+    background-color: #ffffff;
+    color: #000000;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    border: 2px solid #000000;
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: #000000;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+h1, h2, h3 {
+    color: #000000;
+}
+
+p {
+    font-size: 18px; /* Adjust the paragraph font size */
+}
+
+h2{
+    padding-bottom: 10px;
+    font-size: 30px;
+}
+
+h4{
+    font-size: 14.4px;
+}
+
+ul, ol {
+    padding-left: 20px;
+}
+
+@media (min-width: 769px) {
+    .sidebar {
+      display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar-toggle {
+        display: none !important;
+    }
+
+    .navbar-title{
+        justify-content:center;
+    }
+
+    .navbar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .navbar-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+    }
+    .navbar-toggle {
+        position: absolute;
+        left: 0.1%;
+        margin-left: 120px;
+    }
+    .logo {
+        margin: 0 auto;
+    }
+
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+    }
+
+    .navbar.open .navbar-links {
+        display: flex;
+    }
+
+    .navbar-links a {
+        padding: 10px 0;
+        border-top: 1px solid #ddd;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .content {
+        padding: 10px;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .vertical-left,
+    .col {
+        width: 100%;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+        font-size: 1em;
+    }
+
+    .skills-list-note {
+        width: 100%;
+        padding: 5px 10px;
+    }
+
+    .skills-list-note span {
+        font-size: 14px;
+    }
+
+}
+
+
+/* Mobile Adjustments */
+@media (max-width: 480px) {
+    .navbar h2 {
+        font-size: 1.2em;
+    }
+    .navbar-toggle {
+        font-size: 20px;
+
+    }
+    .content, .section {
+        padding: 10px;
+        width: 100%;
+    }
+    .skills-box span, .skills-list span {
+        font-size: 14px;
+    }
+    h1, h2, h3 {
+        font-size: 1.5em;
+    }
+    .image-container .ui-image {
+        max-width: 100%;
+        margin-top: 10px;
+    }
+    .skills-list-note {
+        width: 100%; /* Ensures full-width on very small screens */
+        padding: 5px; /* Reduce padding for mobile */
+    }
+
+    .skills-list-note span {
+        font-size: 12px; /* Further reduce font size for readability */
+    }
+}
+
+/* Mobile Adjustments for Devices under 480px */
+@media (max-width: 480px) {
+    /* Navbar */
+    .navbar {
+        width: 100%;  /* Full width for the sidebar */
+        padding: 15px; /* Reduce padding */
+        position: relative;
+    }
+    .navbar-toggle {
+        display: block; /* Show toggle button */
+        font-size: 20px; /* Adjust icon size */
+    }
+    .navbar h2 {
+        font-size: 1.1em; /* Smaller heading font size */
+        line-height: 1.2;
+    }
+    .navbar-links a {
+        padding: 8px 0; /* Adjust spacing for links */
+        font-size: 0.9em; /* Smaller font for readability */
+    }
+    
+    /* Main Content */
+    .content, .section {
+        margin: 0;
+        padding: 10px; /* Compact padding */
+        width: 100%; /* Full width */
+    }
+    h1, h2, h3, p {
+        font-size: 0.9em; /* Smaller font size for all text elements */
+    }
+    
+    /* Skills and Lists */
+    .skills-box, .skills-list, .skills-list-note {
+        width: 100%; /* Full width */
+    }
+    .skills-list span, .skills-list-note span {
+        font-size: 12px; /* Smaller font for skills tags */
+        padding: 4px 8px; /* Reduce padding */
+    }
+
+    /* Images */
+    .image-container .ui-image {
+        max-width: 100%; /* Ensure image fits screen width */
+        margin-top: 10px; /* Spacing above image */
+    }
+
+    /* Footer and Other Elements */
+    #footer {
+        height: auto; /* Allow footer to adapt height */
+        padding: 20px; /* Add padding for better spacing */
+    }
+    #footer-color, #approach-color, #deliverable-color {
+        font-size: 1em; /* Adjust font size for smaller screens */
+    }
+    
+    /* Button Adjustments */
+    .navbar-toggle {
+        font-size: 18px; /* Slightly smaller button for compact view */
+        cursor: pointer;
+        margin-top: 5px; /* Spacing for toggle button */
+    }
+}
+
+/* Mobile Adjustments for Devices under 320px */
+@media (max-width: 320px) {
+    /* Navbar */
+    .navbar {
+        width: 100%;  /* Full width for the sidebar */
+        padding: 10px; /* Reduce padding */
+    }
+    .navbar h2 {
+        font-size: 1em; /* Smaller heading font size */
+        line-height: 1.1;
+    }
+    .navbar-links a {
+        padding: 6px 0; /* Compact padding */
+        font-size: 0.8em; /* Smaller font size */
+    }
+    
+    /* Toggle Button */
+    .navbar-toggle {
+        font-size: 16px; /* Slightly smaller for compact screens */
+        margin-top: 5px;
+    }
+
+    /* Main Content */
+    .content, .section {
+        margin: 0;
+        padding: 8px; /* Minimal padding */
+        width: 100%; /* Full width */
+    }
+    h1, h2, h3, p {
+        font-size: 0.85em; /* Smaller font size */
+    }
+    
+    /* Skills List */
+    .skills-box, .skills-list, .skills-list-note {
+        width: 100%; /* Full width */
+    }
+    .skills-list span, .skills-list-note span {
+        font-size: 11px; /* Smaller font for skills tags */
+        padding: 3px 6px; /* Compact padding */
+    }
+
+    /* Images */
+    .image-container .ui-image {
+        max-width: 100%; /* Ensure image fits within screen */
+        margin-top: 8px; /* Small spacing above image */
+    }
+
+    /* Footer and Other Elements */
+    #footer {
+        height: auto; /* Flexible footer height */
+        padding: 15px; /* Reduce padding */
+    }
+    #footer-color, #approach-color, #deliverable-color {
+        font-size: 0.9em; /* Smaller font size */
+    }
+
+    /* General Adjustments for Text and Layout */
+    .skills-header, .underline, .navbar a {
+        font-size: 0.8em; /* Reduce overall text size */
+    }
+    h1, h2, h3 {
+        font-size: 1.2em; /* Adjust headings for readability */
+    }
+    p, .navbar a, .section h3 {
+        font-size: 0.75em; /* Compact paragraph text */
+    }
+
+    /* Centering Adjustments */
+    .center-content {
+        text-align: left; /* Align text to left for readability */
+    }
+}

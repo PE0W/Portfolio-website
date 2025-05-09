@@ -33,19 +33,17 @@ html {
 
 /* ----- CHANGE THE SCROLL BAR DESIGN ----- */
 ::-webkit-scrollbar {
-    width: 10px;
-    border-radius: 25px;
+    width: 0px;
+    background: transparent;
 }
 
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #ccc;
-    border-radius: 30px;
+    background: transparent;
 }
-
 ::-webkit-scrollbar-thumb:hover {
     background: #bbb;
 }
@@ -67,9 +65,9 @@ span {
 .navbar {
     left: 10px;
     width: 300px;
-    padding-right: 50px;
+    padding-right: 60px;
     padding-top: 20px;
-    padding-left: 20px;
+    padding-left: 5px;
     background-color: #ffffff;
     position: fixed;
     height: 100%;
@@ -384,15 +382,16 @@ span {
 }
 
 .image-container {
-    display: flex;
-    justify-content: flex-start;
-    margin-top: 20px;
-    padding-left: 20px;
+    margin: 0;
+    padding: 0;
+    
 }
 
-.ui-image {
-    max-width: 93%;
+.ui-image { 
+    display: block;
+    width: 70%;
     height: auto;
+    margin: 0 auto; /* This centers the image horizontally */
 }
 
 .underline {
@@ -424,11 +423,18 @@ span {
     text-align: center;
 }
 
+.video-row {
+    display: flex;
+    justify-content: center; /* or space-between */
+    gap: 20px; /* space between the videos */
+    margin-top: 0;
+    padding: 0;
+}
+
 .ui-video {
-    max-width: 100%;
+    width: 70%; 
     height: auto;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: block;
 }
 
 .video-caption {
@@ -519,13 +525,21 @@ ol {
         justify-content: space-between;
         position: relative;
     }
+
     .navbar-toggle {
         position: absolute;
         left: 0.1%;
         margin-left: 120px;
     }
+
     .logo {
         margin: 0 auto;
+    }
+
+    .image-container .ui-image {
+        max-width: 100%;
+        margin-top: 10px;
+        margin-left: 65px ;
     }
 
     .navbar-links {
