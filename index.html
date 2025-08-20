@@ -16,6 +16,7 @@
 
     <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
+
     <title>Portfolio | Vitsarut</title>
 </head>
 
@@ -74,8 +75,7 @@
                         </p>
                     </div>
                     <div class="featured-text-btn">
-                        <a a href="#contact"
-                            class="btn blue-btn" style="text-decoration: none;">Hire Me
+                        <a a href="#contact" class="btn blue-btn" style="text-decoration: none;">Hire Me
                         </a>
                         <a href="assets/files/Vitsarut _Resume_UX&UI Design.pdf" download>
                             <button class="btn">Download CV <i class="uil uil-file-alt"></i></button>
@@ -117,9 +117,9 @@
                     <div class="col">
                         <div class="about-info">
                             <h3>My introduction</h3>
-                            <p>As an experienced UX/UI designer, I craft intuitive and visually captivating digital 
-                                experiences that prioritize user needs and satisfaction. With a strong foundation 
-                                in user research and prototyping, I transform complex ideas into accessible and 
+                            <p>As an experienced UX/UI designer, I craft intuitive and visually captivating digital
+                                experiences that prioritize user needs and satisfaction. With a strong foundation
+                                in user research and prototyping, I transform complex ideas into accessible and
                                 engaging user journeys.
                             </p>
                             <div class="about-btn">
@@ -197,7 +197,7 @@
                             </a>
                         </div>
                     </section>
-                    
+
                     <!-- -------------- Graphics BOX ---------------- -->
                     <section class="section" id="projects">
                         <div class="top-header">
@@ -223,46 +223,46 @@
                                         <div class="hover-text">Nakhon Spa Ads(Mobile)</div>
                                     </a>
                                 </div>
-                            </section>                    
-                        </div>                
-                    </section>                 
-                </div>                
+                            </section>
+                        </div>
+                    </section>
+                </div>
             </section>
 
             <!-- -------------- CONTACT BOX ---------------- -->
 
             <section class="section" id="contact">
                 <div class="top-header">
-                  <h1>Get in touch</h1>
-                  <span>Do you have a project in your mind? Contact me here.</span>
+                    <h1>Get in touch</h1>
+                    <span>Do you have a project in your mind? Contact me here.</span>
                 </div>
                 <div class="row">
-                  <div class="col">
-                    <div class="contact-info">
-                      <h2>Find Me <i class="uil uil-corner-right-down"></i></h2>
-                      <p><i class="uil uil-envelope"></i> Email: vitsarut.lim@gmail.com</p>
-                      <p><i class="uil uil-phone"></i> Tel: 094-449-4105</p>
+                    <div class="col">
+                        <div class="contact-info">
+                            <h2>Find Me <i class="uil uil-corner-right-down"></i></h2>
+                            <p><i class="uil uil-envelope"></i> Email: vitsarut.lim@gmail.com</p>
+                            <p><i class="uil uil-phone"></i> Tel: 094-449-4105</p>
+                        </div>
                     </div>
-                  </div>
-                  <div class="col">
-                    <form id="contact-form">
-                      <div class="form-control">
-                        <div class="form-inputs">
-                          <input type="text" name="from_name" class="input-field" placeholder="Name">
-                          <input type="email" name="from_email" class="input-field" placeholder="Email">
-                        </div>
-                        <div class="text-area">
-                          <textarea name="message" placeholder="Message"></textarea>
-                        </div>
-                        <div class="form-button">
-                          <button type="submit" class="btn">Send <i class="uil uil-message"></i></button>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
+                    <div class="col">
+                        <form id="contact-form">
+                            <div class="form-control">
+                                <div class="form-inputs">
+                                    <input type="text" name="from_name" class="input-field" placeholder="Name">
+                                    <input type="email" name="from_email" class="input-field" placeholder="Email">
+                                </div>
+                                <div class="text-area">
+                                    <textarea name="message" placeholder="Message"></textarea>
+                                </div>
+                                <div class="form-button">
+                                    <button type="submit" class="btn">Send <i class="uil uil-message"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-              </section>
-              
+            </section>
+
         </main>
 
 
@@ -293,7 +293,14 @@
                 <div class="icon"><i class="uil uil-github-alt"></i></div>
             </div> -->
             <div class="bottom-footer">
-                <p>Copyright &copy; <a href="#home" style="text-decoration: none;">Vitsarut Limkarnjanawat</a> - All rights reserved
+                <p>
+                    Copyright &copy;
+                    <a href="#home" style="text-decoration: none;">Vitsarut Limkarnjanawat</a>
+                    - All rights reserved |
+                    <!-- Visitor Counter -->
+                    <span id="visitor-counter" style="margin-top: 10px;; font-size:15px; color:#555;">
+                        <i class="uil uil-eye"></i> <span id="visit-count">0</span>
+                    </span>
                 </p>
             </div>
         </footer>
@@ -314,30 +321,57 @@
 
     <script type="text/javascript">
         // Initialize EmailJS with your user ID
-        (function() {
-          emailjs.init('QDjGIlCj_6rgNgPFb');  // Replace 'YOUR_USER_ID' with your EmailJS user ID
+        (function () {
+            emailjs.init('QDjGIlCj_6rgNgPFb');  // Replace 'YOUR_USER_ID' with your EmailJS user ID
         })();
-      
+
         // Handle the form submission
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-          event.preventDefault(); // Prevent default form submission
-      
-          const form = event.target;
-      
-          // Send the form data to EmailJS
-          emailjs.sendForm('service_hhyfzl5', 'template_7j6dfqi', form)
-            .then(function(response) {
-              console.log('Success:', response);
-              alert('Your message has been sent successfully!');
-            })
-            .catch(function(error) {
-              console.error('Error:', error);
-              alert('Failed to send the message. Please try again later.');
-            });
+        document.getElementById('contact-form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const form = event.target;
+
+            // Send the form data to EmailJS
+            emailjs.sendForm('service_hhyfzl5', 'template_7j6dfqi', form)
+                .then(function (response) {
+                    console.log('Success:', response);
+                    alert('Your message has been sent successfully!');
+                })
+                .catch(function (error) {
+                    console.error('Error:', error);
+                    alert('Failed to send the message. Please try again later.');
+                });
         });
-      </script>
-      
-      
+    </script>
+
+    <script>
+        async function updateVisitorCount() {
+            try {
+                const visitKey = "portfolio_visited"; // unique key in browser storage
+
+                // If this browser already visited, only fetch the current count
+                const endpoint = localStorage.getItem(visitKey)
+                    ? "https://api.counterapi.dev/v1/my-portfolio/visits"
+                    : "https://api.counterapi.dev/v1/my-portfolio/visits/up";
+
+                const response = await fetch(endpoint);
+                const data = await response.json();
+
+                // Mark this browser as visited
+                localStorage.setItem(visitKey, "true");
+
+                // Update counter text
+                document.getElementById("visit-count").textContent = data.count;
+            } catch (error) {
+                console.error("Counter API Error:", error);
+            }
+        }
+
+        // Run on page load
+        updateVisitorCount();
+    </script>
+
+
 </body>
 
 </html>
