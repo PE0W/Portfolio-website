@@ -346,36 +346,30 @@
 
     <script>
         async function updateVisitorCount() {
-            const counterSlug = "vitsarut-portfolio"; // your unique slug
-            const visitKey = "visited_" + counterSlug;
-            let endpoint;
-
-            // First-time visitor → increment
-            if (localStorage.getItem(visitKey)) {
-                endpoint = `https://api.counterapi.dev/v1/${counterSlug}/visits`;
-            } else {
-                endpoint = `https://api.counterapi.dev/v1/${counterSlug}/visits/up`;
-                localStorage.setItem(visitKey, "true");
-            }
+            const counterSlug = "vitsarut-portfolio"; // make this UNIQUE for your site
+            const visitKey = "visited_" + counterSlug; // unique key in localStorage
 
             try {
+                let endpoint;
+
+                if (localStorage.getItem(visitKey)) {
+                    // Already visited → just read the count
+                    endpoint = `https://api.counterapi.dev/v1/${counterSlug}/visits`;
+                } else {
+                    // First time → increment the counter
+                    endpoint = `https://api.counterapi.dev/v1/${counterSlug}/visits/up`;
+                    localStorage.setItem(visitKey, "true");
+                }
+
                 const response = await fetch(endpoint);
                 const data = await response.json();
-                const finalCount = data.count || 0;
 
-                // Animate number from 0 → finalCount
-                const counterElem = document.getElementById("visit-count");
-                let current = 0;
-                const increment = Math.ceil(finalCount / 100); // adjust speed
-                const interval = setInterval(() => {
-                    current += increment;
-                    if (current >= finalCount) {
-                        current = finalCount;
-                        clearInterval(interval);
-                    }
-                    counterElem.textContent = current;
-                }, 20); // 20ms per increment step
-
+                if (data.count !== undefined) {
+                    document.getElementById("visit-count").textContent = data.count;
+                } else {
+                    document.getElementById("visit-count").textContent = "⚠️";
+                    console.error("Invalid API response:", data);
+                }
             } catch (error) {
                 console.error("Counter API Error:", error);
                 document.getElementById("visit-count").textContent = "⚠️";
@@ -385,7 +379,6 @@
         // Run on page load
         updateVisitorCount();
     </script>
-
 
 
 
