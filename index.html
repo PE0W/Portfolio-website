@@ -348,37 +348,30 @@
         async function getVisitorCount() {
             const counterSlug = "vitsarut-portfolio";
             const visitKey = "visited_" + counterSlug;
-            const cacheKey = "cached_count_" + counterSlug;
-            let endpoint;
 
-            // Check if this browser already visited
-            if (localStorage.getItem(visitKey)) {
-                endpoint = `https://api.counterapi.dev/v1/${counterSlug}/visits`;
-            } else {
-                endpoint = `https://api.counterapi.dev/v1/${counterSlug}/visits/up`;
-                localStorage.setItem(visitKey, "true");
+            // Increment only once per browser
+            if (!localStorage.getItem(visitKey)) {
+                try {
+                    await fetch(`https://api.counterapi.dev/v1/${counterSlug}/visits/up`);
+                    localStorage.setItem(visitKey, "true");
+                } catch (e) { console.error(e); }
             }
 
+            // Fetch latest count
             try {
-                const response = await fetch(endpoint);
+                const response = await fetch(`https://api.counterapi.dev/v1/${counterSlug}/visits`);
                 const data = await response.json();
-                const count = data.count || 0;
-
-                // Save to localStorage so it persists
-                localStorage.setItem(cacheKey, count);
-
-                return count;
+                return data.count || 0;
             } catch (error) {
                 console.error("Counter API Error:", error);
-                // fallback to cached count if available
-                return parseInt(localStorage.getItem(cacheKey)) || 0;
+                return parseInt(localStorage.getItem("cached_count_" + counterSlug)) || 0;
             }
         }
 
-        // Animate number from current → target
+        // Animate from current → target
         function animateCounter(element, targetCount) {
-            let current = parseInt(element.textContent) || 0; // start from current
-            const increment = Math.ceil(targetCount / 100);
+            let current = parseInt(element.textContent) || 0;
+            const increment = Math.ceil((targetCount - current) / 100);
             const interval = setInterval(() => {
                 current += increment;
                 if (current >= targetCount) {
@@ -389,21 +382,21 @@
             }, 20);
         }
 
-        // Initialize counter
         const counterElement = document.getElementById("visit-count");
+        const counterSlug = "vitsarut-portfolio";
 
-        // Show cached value immediately
-        const cacheKey = "cached_count_vitsarut-portfolio";
-        const cachedCount = parseInt(localStorage.getItem(cacheKey)) || 0;
+        // Show cached count immediately
+        const cachedCount = parseInt(localStorage.getItem("cached_count_" + counterSlug)) || 0;
         counterElement.textContent = cachedCount;
 
-        // Animate when scrolled into view
+        // Scroll-triggered observer
         const observer = new IntersectionObserver(async (entries, observer) => {
             for (const entry of entries) {
                 if (entry.isIntersecting) {
                     const count = await getVisitorCount();
+                    localStorage.setItem("cached_count_" + counterSlug, count);
                     animateCounter(counterElement, count);
-                    observer.unobserve(counterElement); // run only once
+                    observer.unobserve(counterElement);
                 }
             }
         }, { threshold: 0.5 });
