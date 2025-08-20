@@ -345,11 +345,12 @@
     </script>
 
     <script>
-        async function getVisitorCount() {
+        async function updateVisitorCount() {
             const counterSlug = "vitsarut-portfolio"; // your unique slug
             const visitKey = "visited_" + counterSlug;
             let endpoint;
 
+            // First-time visitor → increment
             if (localStorage.getItem(visitKey)) {
                 endpoint = `https://api.counterapi.dev/v1/${counterSlug}/visits`;
             } else {
@@ -360,40 +361,29 @@
             try {
                 const response = await fetch(endpoint);
                 const data = await response.json();
-                return data.count || 0;
+                const finalCount = data.count || 0;
+
+                // Animate number from 0 → finalCount
+                const counterElem = document.getElementById("visit-count");
+                let current = 0;
+                const increment = Math.ceil(finalCount / 100); // adjust speed
+                const interval = setInterval(() => {
+                    current += increment;
+                    if (current >= finalCount) {
+                        current = finalCount;
+                        clearInterval(interval);
+                    }
+                    counterElem.textContent = current;
+                }, 20); // 20ms per increment step
+
             } catch (error) {
                 console.error("Counter API Error:", error);
-                return 0;
+                document.getElementById("visit-count").textContent = "⚠️";
             }
         }
 
-        // Animate the counter from 0 → target
-        function animateCounter(element, targetCount) {
-            let current = 0;
-            const increment = Math.ceil(targetCount / 100); // adjust speed
-            const interval = setInterval(() => {
-                current += increment;
-                if (current >= targetCount) {
-                    current = targetCount;
-                    clearInterval(interval);
-                }
-                element.textContent = current;
-            }, 20);
-        }
-
-        // Scroll-trigger observer
-        const counterElement = document.getElementById("visit-count");
-        const observer = new IntersectionObserver(async (entries, observer) => {
-            for (const entry of entries) {
-                if (entry.isIntersecting) {
-                    const count = await getVisitorCount();
-                    animateCounter(counterElement, count);
-                    observer.unobserve(counterElement); // only run once
-                }
-            }
-        }, { threshold: 0.5 }); // triggers when 50% of element is visible
-
-        observer.observe(counterElement);
+        // Run on page load
+        updateVisitorCount();
     </script>
 
 
