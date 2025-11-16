@@ -258,10 +258,23 @@
             </div>
         </section>
 
-        <!-- Image Section -->
-        <div class="image-container">
-            <img src="assets/images/Shippingcover.png" alt="UI Design and Scenario Case Image" class="ui-image">
+        <!-- Image Slider -->
+        <div class="slider-container">
+            <div class="slider">
+                <img src="assets/images/Shippingcover.png" class="slide">
+                <img src="assets/images/NLS1.png" class="slide">
+                <img src="assets/images/NLS2.png" class="slide">
+                <img src="assets/images/NLS3.png" class="slide">
+                <img src="assets/images/NLS4.png" class="slide">
+                <img src="assets/images/NLS5.png" class="slide">
+            </div>
         </div>
+
+        <div class="slider-buttons">
+            <button class="nav-button prev-btn">&#10094; </button>
+            <button class="nav-button next-btn">&#10095;</button>
+        </div>
+
         <span class="section center-content" id="Cover">
             User Flow (Partial)<br>
             Next Level Shipping Company
@@ -313,6 +326,44 @@
             icon.classList.toggle("fa-times");  // Change to "fa-times" when the sidebar is open
         }
     </script>
+
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const slider = document.querySelector('.slider');
+        const totalSlides = slides.length;
+
+        function moveSlide(index) {
+            currentIndex = index;
+            if (currentIndex >= totalSlides) currentIndex = 0;
+            if (currentIndex < 0) currentIndex = totalSlides - 1;
+            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        // Auto slide every 4 seconds
+        let autoSlide = setInterval(() => {
+            moveSlide(currentIndex + 1);
+        }, 4000);
+
+        // Buttons
+        document.querySelector('.next-btn').addEventListener('click', () => {
+            moveSlide(currentIndex + 1);
+            resetAutoSlide();
+        });
+
+        document.querySelector('.prev-btn').addEventListener('click', () => {
+            moveSlide(currentIndex - 1);
+            resetAutoSlide();
+        });
+
+        function resetAutoSlide() {
+            clearInterval(autoSlide);
+            autoSlide = setInterval(() => {
+                moveSlide(currentIndex + 1);
+            }, 4000);
+        }
+    </script>
+
 
 </body>
 

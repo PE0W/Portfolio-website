@@ -254,11 +254,25 @@
             </div>
         </section>
 
-        <!-- Image Section -->
-        <div class="image-container">
-            <img src="assets/images/Coffeecover.png" alt="UI Design and Scenario Case Image" class="ui-image">
+        <!-- Image Slider -->
+        <div class="slider-container">
+            <div class="slider">
+                <img src="assets/images/Coffeecover.png" class="slide">
+                <img src="assets/images/CF1.png" class="slide">
+                <img src="assets/images/CF2.png" class="slide">
+                <img src="assets/images/CF3.png" class="slide">
+                <img src="assets/images/CF4.png" class="slide">
+            </div>
         </div>
-        <span class="section center-content" id="Cover">User Flow (Partial)<br>Green Beans Coffee Detection</span>
+
+        <div class="slider-buttons">
+            <button class="nav-button prev-btn">&#10094; </button>
+            <button class="nav-button next-btn">&#10095;</button>
+        </div>
+
+        <span class="section center-content" id="Cover">
+            User Flow (Partial)<br>Green Beans Coffee Detection
+        </span>
 
         <div class="project-navigation">
             <a href="Nakhon spa Ads(Mobile).html" class="nav-button">Back</a>
@@ -302,6 +316,46 @@
             icon.classList.toggle("fa-times");  // Change to "fa-times" when the sidebar is open
         }
     </script>
+
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const slider = document.querySelector('.slider');
+        const totalSlides = slides.length;
+
+        // Change slide function
+        function moveSlide(index) {
+            currentIndex = index;
+            if (currentIndex >= totalSlides) currentIndex = 0;
+            if (currentIndex < 0) currentIndex = totalSlides - 1;
+            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        // Auto slide every 4 seconds
+        let autoSlide = setInterval(() => {
+            moveSlide(currentIndex + 1);
+        }, 4000);
+
+        // Buttons
+        document.querySelector('.next-btn').addEventListener('click', () => {
+            moveSlide(currentIndex + 1);
+            resetAutoSlide();
+        });
+
+        document.querySelector('.prev-btn').addEventListener('click', () => {
+            moveSlide(currentIndex - 1);
+            resetAutoSlide();
+        });
+
+        // Reset auto slide timer when user clicks buttons
+        function resetAutoSlide() {
+            clearInterval(autoSlide);
+            autoSlide = setInterval(() => {
+                moveSlide(currentIndex + 1);
+            }, 4000);
+        }
+    </script>
+
 
 </body>
 
